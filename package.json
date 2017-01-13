@@ -19,9 +19,13 @@
     ]
   },
   "browser": {
-    "vue": "vue/dist/vue.common.js"
+    "vue": "vue/dist/vue.common.js",
+    "promise": "es6-promise/dist/es6-promise.auto.min.js",
+    "fetch": "fetch-ie8/fetch.js"
   },
   "dependencies": {
+    "es6-promise": "^4.0.5",
+    "fetch-ie8": "^1.4.3",
     "vue": "^2.0.1"
   },
   "devDependencies": {
