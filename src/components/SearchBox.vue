@@ -4,7 +4,7 @@
       <input type="text" class="searchbox--input" v-model="searchTerm">
       <input type="submit" class="searchbox--submit" value="Search">
     </form>
-    <search-results></search-results>
+    <search-results :results="searchResults"></search-results>
   </div>
 </template>
 
@@ -17,8 +17,7 @@ export default {
   },
   data () {
     return {
-      searchTerm: '',
-      searchResults: []
+      searchTerm: ''
     }
   },
   methods: {
@@ -26,11 +25,11 @@ export default {
       var append = encodeURIComponent(" karaoke");
       var url = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=relevance&type=video&videoEmbeddable=true&key=AIzaSyBkvR8k4rZ03LwzPcjReLqloNWrgNv9TIE&q=" + encodeURIComponent(this.searchTerm) + append;
 
-      this.searchResults = [];
+      //this.searchResults = [];
+      this.$store.commit('clearSearchResults');
 
       fetch(url).then(response => response.json())
-        .then(data => data.items.forEach(item => this.searchResults.push(item)))
-        .then(console.log(this.searchResults))
+        .then(data => this.$store.commit('addSearchResults', data.items))
         .then(this.searchTerm = '')
         .catch(e => console.log(e));
     }

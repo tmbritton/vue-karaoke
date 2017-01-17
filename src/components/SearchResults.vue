@@ -1,9 +1,15 @@
 <template>
-	<ul class="search-results">
-    <li v-for="result in searchResults">
-      <a href="#">
-        <img :src="result.snippet.thumbnails.default.url">
-        {{ result.snippet.title }}
+	<ul v-if="results" class="search-results">
+    <li v-for="result in results">
+      <a 
+        v-on:click.prevent="changeVideo" 
+        href="#" 
+        :data-title="result.snippet.title" 
+        :data-ytid="result.id.videoId"
+        :data-source="'https://www.youtube.com/embed/' + result.id.videoId"
+        >
+          <img :src="result.snippet.thumbnails.default.url">
+          {{ result.snippet.title }}
       </a>
     </li>
   </ul>
@@ -11,13 +17,27 @@
 
 <script>
 export default {
-  name: 'search-box',
-  props: [
-  	'searchResults'
-  ],
   data () {
-  	return {
-  	}
+    return {
+      results: this.$store.state.searchResults
+    }
+  },
+  methods: {
+    changeVideo: function(event) {
+      var selection = event.srcElement,
+          video = {
+            source: selection.dataset.source,
+            ytid: selection.dataset.ytid,
+            title: selection.dataset.title
+          };
+
+      this.$store.commit('changeVideo', video);
+      this.$store.commit('clearSearchResults');
+      //this.$emit('videoSelected', video);
+      //this.$emit('changeSearchResults', []);    
+      //this.$parent.$parent.video = video;
+      //this.$parent.searchResults = [];
+    }
   }
-}  
+}
 </script>

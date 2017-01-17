@@ -14,6 +14,10 @@ export default {
   components: {
     KaraokePlayer,
     SearchBox,
+  },
+  data () {
+  	return {
+  	}
   }
 }
 </script>
