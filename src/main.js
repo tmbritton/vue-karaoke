@@ -15,8 +15,8 @@ const store = new Vuex.Store({
       ytid: 'vIv7suVkVaU',
       source: 'https://www.youtube.com/embed/vIv7suVkVaU'
     },
-    searchResults: [],
-    queue: []
+    searchResults: JSON.parse(localStorage.getItem('searchResults')) || [],
+    queue: JSON.parse(localStorage.getItem('queue')) || []
   },
   mutations: {
     // Update individual object properties so changes are properly observed in UI.
@@ -24,21 +24,25 @@ const store = new Vuex.Store({
     	state.video.source = payload.source;
     	state.video.title = payload.title;
     	state.video.ytid = payload.ytid;
+    	localStorage.setItem('video', state.video);
     },
     // Array mutation methods: https://vuejs.org/v2/guide/list.html#Array-Change-Detection
     addSearchResults(state, payload) {
     	payload.forEach(result => state.searchResults.push(result));
+    	localStorage.setItem('searchResults', JSON.stringify(state.searchResults));
     },
     clearSearchResults(state) {
     	state.searchResults.splice(0, state.searchResults.length);
+    	localStorage.setItem('searchResults', JSON.stringify([]));
     },
     addSongToQueue(state, payload) {
       state.queue.push(payload);
+      localStorage.setItem('queue', JSON.stringify(state.queue));
     },
     clearQueue(state, payload) {
       state.queue.splice(0, state.queue.length);
+      localStorage.setItem('queue', JSON.stringify([]));
     }
-
   }
 });
 
