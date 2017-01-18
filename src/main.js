@@ -27,21 +27,25 @@ const store = new Vuex.Store({
     	localStorage.setItem('video', state.video);
     },
     // Array mutation methods: https://vuejs.org/v2/guide/list.html#Array-Change-Detection
-    addSearchResults(state, payload) {
+    addSearchResults (state, payload) {
     	payload.forEach(result => state.searchResults.push(result));
     	localStorage.setItem('searchResults', JSON.stringify(state.searchResults));
     },
-    clearSearchResults(state) {
+    clearSearchResults (state) {
     	state.searchResults.splice(0, state.searchResults.length);
     	localStorage.setItem('searchResults', JSON.stringify([]));
     },
-    addSongToQueue(state, payload) {
+    addSongToQueue (state, payload) {
       state.queue.push(payload);
       localStorage.setItem('queue', JSON.stringify(state.queue));
     },
-    clearQueue(state, payload) {
+    clearQueue (state, payload) {
       state.queue.splice(0, state.queue.length);
       localStorage.setItem('queue', JSON.stringify([]));
+    },
+    removeSongFromQueue (state, payload) {
+    	state.queue.splice(payload, 1);
+    	localStorage.setItem('queue', JSON.stringify(state.queue));
     }
   }
 });
