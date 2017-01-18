@@ -43,6 +43,10 @@ const store = new Vuex.Store({
       state.queue.splice(0, state.queue.length);
       localStorage.setItem('queue', JSON.stringify([]));
     },
+    moveSongInQueue (state, payload) {
+    	state.queue.splice(payload.to, 0, state.queue.splice(payload.from, 1)[0]);
+    	localStorage.setItem('queue', JSON.stringify(state.queue));
+    },
     removeSongFromQueue (state, payload) {
     	state.queue.splice(payload, 1);
     	localStorage.setItem('queue', JSON.stringify(state.queue));
