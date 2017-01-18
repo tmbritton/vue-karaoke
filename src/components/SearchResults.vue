@@ -2,7 +2,7 @@
 	<ul v-if="results" class="search-results">
     <li v-for="result in results">
       <a 
-        v-on:click.prevent="changeVideo" 
+        v-on:click.prevent="addSongToQueue" 
         href="#" 
         :data-title="result.snippet.title" 
         :data-ytid="result.id.videoId"
@@ -23,6 +23,18 @@ export default {
     }
   },
   methods: {
+    addSongToQueue: function(event) {
+      var selection = event.srcElement,
+          video = {
+            source: selection.dataset.source,
+            ytid: selection.dataset.ytid,
+            title: selection.dataset.title
+          };
+
+      this.$store.commit('addSongToQueue', video);
+      this.$store.commit('clearSearchResults');
+    },
+
     changeVideo: function(event) {
       var selection = event.srcElement,
           video = {

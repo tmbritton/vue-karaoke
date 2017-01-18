@@ -15,7 +15,8 @@ const store = new Vuex.Store({
       ytid: 'vIv7suVkVaU',
       source: 'https://www.youtube.com/embed/vIv7suVkVaU'
     },
-    searchResults: []
+    searchResults: [],
+    queue: []
   },
   mutations: {
     // Update individual object properties so changes are properly observed in UI.
@@ -30,7 +31,14 @@ const store = new Vuex.Store({
     },
     clearSearchResults(state) {
     	state.searchResults.splice(0, state.searchResults.length);
+    },
+    addSongToQueue(state, payload) {
+      state.queue.push(payload);
+    },
+    clearQueue(state, payload) {
+      state.queue.splice(0, state.queue.length);
     }
+
   }
 });
 
