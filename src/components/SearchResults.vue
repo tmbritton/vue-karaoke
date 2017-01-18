@@ -33,10 +33,6 @@ export default {
 
       this.$store.commit('changeVideo', video);
       this.$store.commit('clearSearchResults');
-      //this.$emit('videoSelected', video);
-      //this.$emit('changeSearchResults', []);    
-      //this.$parent.$parent.video = video;
-      //this.$parent.searchResults = [];
     }
   }
 }

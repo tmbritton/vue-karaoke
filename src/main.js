@@ -18,9 +18,6 @@ const store = new Vuex.Store({
     searchResults: []
   },
   mutations: {
-    increment (state) {
-      state.count++;
-    },
     // Update individual object properties so changes are properly observed in UI.
     changeVideo (state, payload) {
     	state.video.source = payload.source;
