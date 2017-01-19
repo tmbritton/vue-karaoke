@@ -7,6 +7,9 @@
         :data-title="result.snippet.title" 
         :data-ytid="result.id.videoId"
         :data-source="'https://www.youtube.com/embed/' + result.id.videoId"
+        :data-thumbdefault="result.snippet.thumbnails.default.url"
+        :data-thumbmedium="result.snippet.thumbnails.medium.url"
+        :data-thumbhigh="result.snippet.thumbnails.high.url"
         >
           <img :src="result.snippet.thumbnails.default.url">
           {{ result.snippet.title }}
@@ -28,7 +31,12 @@ export default {
           video = {
             source: selection.dataset.source,
             ytid: selection.dataset.ytid,
-            title: selection.dataset.title
+            title: selection.dataset.title,
+            thumbnails: {
+              default: selection.dataset.thumbdefault,
+              medium: selection.dataset.thumbmedium,
+              high: selection.dataset.thumbhigh
+            } 
           };
 
       this.$store.commit('addSongToQueue', video);
