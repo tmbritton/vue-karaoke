@@ -6,7 +6,7 @@
         href="#" 
         :data-title="result.snippet.title" 
         :data-ytid="result.id.videoId"
-        :data-source="'https://www.youtube.com/embed/' + result.id.videoId"
+        :data-source="'https://www.youtube.com/embed/' + result.id.videoId + '?autoplay=1'" 
         :data-thumbdefault="result.snippet.thumbnails.default.url"
         :data-thumbmedium="result.snippet.thumbnails.medium.url"
         :data-thumbhigh="result.snippet.thumbnails.high.url"

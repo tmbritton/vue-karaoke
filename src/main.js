@@ -11,9 +11,9 @@ const store = new Vuex.Store({
 	// Initial application state.
   state: {
     video: {
-    	title: 'Danzig - Mother (Karaoke)',
-      ytid: 'vIv7suVkVaU',
-      source: 'https://www.youtube.com/embed/vIv7suVkVaU'
+    	title: '',
+      ytid: '',
+      source: ''
     },
     searchResults: JSON.parse(localStorage.getItem('searchResults')) || [],
     queue: JSON.parse(localStorage.getItem('queue')) || []
