@@ -4,13 +4,16 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import App from './App.vue'
+import VueYouTubeEmbed from 'vue-youtube-embed'
+
 
 Vue.use(Vuex);
+Vue.use(VueYouTubeEmbed);
 
 const store = new Vuex.Store({
 	// Initial application state.
   state: {
-    video: {
+    video: JSON.parse(localStorage.getItem('video')) || {
     	title: '',
       ytid: '',
       source: ''
@@ -24,7 +27,7 @@ const store = new Vuex.Store({
     	state.video.source = payload.source;
     	state.video.title = payload.title;
     	state.video.ytid = payload.ytid;
-    	localStorage.setItem('video', state.video);
+    	localStorage.setItem('video', JSON.stringify(state.video));
     },
     // Array mutation methods: https://vuejs.org/v2/guide/list.html#Array-Change-Detection
     addSearchResults (state, payload) {

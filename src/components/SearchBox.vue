@@ -1,7 +1,7 @@
 <template>
   <div class="searchbox">
     <form v-on:submit.prevent="searchForVideos" id="searchbox" class="searchbox">
-      <input type="text" class="searchbox--input" v-model="searchTerm">
+      <input type="text" class="searchbox--input" v-model="searchTerm" placeholder="Search for a song">
       <input type="submit" class="searchbox--submit" value="Search">
     </form>
     <search-results :results="searchResults"></search-results>
@@ -23,7 +23,7 @@ export default {
   methods: {
     searchForVideos: function(submitEvent) {
       var append = encodeURIComponent(" karaoke");
-      var url = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=relevance&type=video&videoEmbeddable=true&key=AIzaSyBkvR8k4rZ03LwzPcjReLqloNWrgNv9TIE&q=" + encodeURIComponent(this.searchTerm) + append;
+      var url = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=relevance&type=video&videoEmbeddable=true&key=AIzaSyBkvR8k4rZ03LwzPcjReLqloNWrgNv9TIE&videoEmbeddable=true&q=" + encodeURIComponent(this.searchTerm) + append;
 
       //this.searchResults = [];
       this.$store.commit('clearSearchResults');

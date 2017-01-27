@@ -27,6 +27,7 @@
     "es6-promise": "^4.0.5",
     "fetch-ie8": "^1.4.3",
     "vue": "^2.0.1",
+    "vue-youtube-embed": "^2.0.1",
     "vuex": "^2.1.1"
   },
   "devDependencies": {

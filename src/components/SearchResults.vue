@@ -12,6 +12,7 @@
         :data-thumbhigh="result.snippet.thumbnails.high.url"
         >
           <img :src="result.snippet.thumbnails.default.url">
+          <br>
           {{ result.snippet.title }}
       </a>
     </li>
