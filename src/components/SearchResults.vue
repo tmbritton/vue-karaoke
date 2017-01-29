@@ -1,6 +1,6 @@
 <template>
-	<ul v-if="results" class="search-results">
-    <li v-for="result in results">
+	<ul v-if="results" class="searchResults.length > 0">
+    <li class="searchResults-listItem" v-for="result in results">
       <a 
         v-on:click.prevent="addSongToQueue" 
         href="#" 
@@ -58,3 +58,16 @@ export default {
   }
 }
 </script>
+
+<style scope>
+
+.searchResults {
+  padding: 0 0 30px 0;
+  list-style-type: none;
+}
+
+.searchResults-listItem {
+  margin: 0 0 10px 0;
+}
+
+</style>

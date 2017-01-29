@@ -1,9 +1,9 @@
 <template>
-  <div id="app">
-    <karaoke-player class="karaoke-player"></karaoke-player>
+  <div class="karaokeApp">
+    <karaoke-player></karaoke-player>
     <div class="column">
-      <search-box class="search-box"></search-box>
-      <song-queue class="song-queue"></song-queue>
+      <search-box></search-box>
+      <song-queue></song-queue>
     </div>
   </div>
 </template>
@@ -27,24 +27,21 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 
-#app {
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #eee;
+  color: #222;
+}
+
+.karaokeApp {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-}
-
-.karaoke-player {
-  margin-right: 10px;
-}
-
-.search-box {
-  max-width: 300px;
-}
-
-.song-queue {
-  max-width: 300px;
 }
 
 </style>

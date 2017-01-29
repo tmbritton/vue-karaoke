@@ -4,6 +4,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import App from './App.vue'
+import HeaderApp from './Header.vue'
 import VueYouTubeEmbed from 'vue-youtube-embed'
 
 
@@ -61,4 +62,10 @@ new Vue({ // eslint-disable-line no-new
   el: '#app',
   store,
   render: (h) => h(App)
+});
+
+new Vue({ // eslint-disable-line no-new
+  el: '#header-app',
+  store,
+  render: (h) => h(HeaderApp)
 });

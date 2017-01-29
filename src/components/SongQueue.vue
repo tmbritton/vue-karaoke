@@ -1,8 +1,8 @@
 <template>
-  <section id="song-queue">
-    <h2>Song Queue</h2>
-    <ol>
-      <li v-for="(song, index) in queue">
+  <section class="songQueue">
+    <h2 class="songQueue-heading">Song Queue</h2>
+    <ol class="songQueue-list">
+      <li class="songQueue-listItem" v-for="(song, index) in queue">
         {{ song.title }}
         <br>
         <a 
@@ -62,3 +62,17 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+.songQueue {
+  max-width: 300px;
+  margin: 0 0 0 20px;
+  padding: 0 0 30px 0;
+}
+
+.songQueue-list {
+  padding: 0 0 0 20px;
+}
+
+</style>

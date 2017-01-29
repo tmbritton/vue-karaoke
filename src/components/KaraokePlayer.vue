@@ -1,6 +1,7 @@
 <template>
-	<section>
+	<section class="karaokePlayer">
     <youtube
+      class="karaokePlayer-youtubeVideo"
       :player-vars="{autoplay: 1, controls: 0}"
       v-if="video.ytid"
       :video-id="video.ytid" 
@@ -11,14 +12,14 @@
       @ended="ended"
     >    
     </youtube>
-    <div class="controls">
-      <a class="control" v-if="video.ytid" v-on:click.prevent="play" href="#">Play</a>
-      <a class="control" v-if="video.ytid" v-on:click.prevent="stop" href="#">Stop</a>
-      <a class="control" v-if="video.ytid" v-on:click.prevent="pause" href="#">Pause</a>
-      <a class="control" v-if="video.ytid" v-on:click.prevent="next" href="#">Next</a>
-    </div>
-    <a v-on:click.prevent="startPlaying" href="#" v-if="!video.ytid && queue.length > 0 && !thumbnail">Click me when you're ready to start singing!</a>
-    <p v-if="!video.ytid && queue.length == 0">Add some songs to the queue to start singing!</p>
+    <section v-if="video.ytid" class="karaokePlayer-controls">
+      <a class="karaokePlayer-controls-control" v-on:click.prevent="play" href="#">Play</a>
+      <a class="karaokePlayer-controls-control" v-on:click.prevent="stop" href="#">Stop</a>
+      <a class="karaokePlayer-controls-control" v-on:click.prevent="pause" href="#">Pause</a>
+      <a class="karaokePlayer-controls-control" v-on:click.prevent="next" href="#">Next</a>
+    </section>
+    <a class="karaokePlayer-startPlaying" v-on:click.prevent="startPlaying" href="#" v-if="!video.ytid && queue.length > 0 && !thumbnail">Click me when you're ready to start singing!</a>
+    <p class="karaokePlayer-startPlaying" v-if="!video.ytid && queue.length == 0">Add some songs to the queue to start singing!</p>
   </section>	
 </template>
 
@@ -87,13 +88,27 @@ export default {
 
 <style scoped>
 
-.controls {
-  display: flex;
-  justify-content: center;
+.karaokePlayer {
+  margin: 20px 0 0 20px;
 }
 
-.control {
-  margin-right: 10px;
+.karaokePlayer-controls {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 30px;
+  background: #222;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
+
+.karaokePlayer-controls-control {
+  margin-right: 10px;
+  color: #fff;
+}
+
 
 </style>
