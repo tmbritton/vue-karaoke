@@ -1,2 +1,6 @@
-#app[data-v-85eb7734]{display:flex;flex-direction:row;flex-wrap:wrap}.karaoke-player[data-v-85eb7734]{margin-right:10px}.search-box[data-v-85eb7734],.song-queue[data-v-85eb7734]{max-width:300px}
-.controls[data-v-dbb71e12]{display:flex;justify-content:center}.control[data-v-dbb71e12]{margin-right:10px}
+*{box-sizing:border-box}body{background:#eee;color:#222}.karaokeApp{display:flex;flex-direction:row;flex-wrap:wrap}
+.siteHeader{height:50px;padding-left:20px;display:flex;align-items:center;background-color:#fff;box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);justify-content:space-between}.siteHeader-heading{margin:0}.nowPlaying{margin:0 20px}.nowPlaying-heading{font-size:1em;font-weight:400;margin:0;font-style:italic}.nowPlaying-text{margin:0}
+.karaokePlayer[data-v-dbb71e12]{margin:20px 0 0 20px}.karaokePlayer-controls[data-v-dbb71e12]{position:fixed;bottom:0;left:0;height:30px;background:#222;width:100%;display:flex;justify-content:center;align-items:center;box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24)}.karaokePlayer-controls-control[data-v-dbb71e12]{margin-right:10px;color:#fff}
+.searchBox[data-v-343307d6]{max-width:300px;margin:20px 0 0 20px}.searchBox-header[data-v-343307d6]{margin-top:0}
+.songQueue[data-v-6197118e]{max-width:300px;margin:0 0 0 20px;padding:0 0 30px}.songQueue-list[data-v-6197118e]{padding:0 0 0 20px}
+.searchResults{padding:0 0 30px;list-style-type:none}.searchResults-listItem{margin:0 0 10px}
