@@ -5,8 +5,7 @@
       :player-vars="{autoplay: 1, controls: 0}"
       v-if="video.ytid"
       :video-id="video.ytid" 
-      player-width="640" 
-      player-height="480"
+
       @ready="ready"
       @playing="playing"
       @ended="ended"
@@ -86,17 +85,35 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="sass">
 
 .karaokePlayer {
-  margin: 20px 0 0 20px;
+  margin: 2em 0 0 2em;
+  width: 100%;
+  max-width: 720px;
+  padding: 0 2em 0 0;
+}
+
+.karaokePlayer-youtubeVideo {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+
+#youtube-player-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .karaokePlayer-controls {
   position: fixed;
   bottom: 0;
   left: 0;
-  height: 30px;
+  height: 50px;
   background: #222;
   width: 100%;
   display: flex;
@@ -109,6 +126,5 @@ export default {
   margin-right: 10px;
   color: #fff;
 }
-
 
 </style>

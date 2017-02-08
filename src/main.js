@@ -7,7 +7,6 @@ import App from './App.vue'
 import HeaderApp from './Header.vue'
 import VueYouTubeEmbed from 'vue-youtube-embed'
 
-
 Vue.use(Vuex);
 Vue.use(VueYouTubeEmbed);
 

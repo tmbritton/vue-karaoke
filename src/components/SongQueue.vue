@@ -66,8 +66,8 @@ export default {
 <style scoped>
 
 .songQueue {
-  max-width: 300px;
-  margin: 0 0 0 20px;
+  max-width: 400px;
+  margin: 0 0 0 2em;
   padding: 0 0 30px 0;
 }
 
