@@ -41,8 +41,7 @@ export default {
 <style scoped>
 
 .searchBox {
-  max-width: 300px;
-  margin: 20px 0 0 20px;
+  margin: 2em 0 0 2em;
 }
 
 .searchBox-header {
