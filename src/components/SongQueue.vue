@@ -5,6 +5,8 @@
       <li class="songQueue-listItem" v-for="(song, index) in queue">
         {{ song.title }}
         <br>
+        Performer: <strong>{{song.performer}}</strong>
+        <br>
         <a 
           v-if="index > 0" 
           v-on:click.prevent="moveSongUpInQueue" 

@@ -1,6 +1,6 @@
 <template>
   <section v-if="video.ytid" class="nowPlaying">
-  	<h1 class="nowPlaying-heading">Now Playing:</h1>
+  	<h1 class="nowPlaying-heading">Now Performing: <strong>{{ video.performer }}</strong></h1>
   	<p class="nowPlaying-text">{{ video.title }}</p>
   </section>
 </template>
