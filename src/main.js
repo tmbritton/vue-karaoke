@@ -24,9 +24,11 @@ const store = new Vuex.Store({
   mutations: {
     // Update individual object properties so changes are properly observed in UI.
     changeVideo (state, payload) {
+      console.log(payload);
     	state.video.source = payload.source;
     	state.video.title = payload.title;
     	state.video.ytid = payload.ytid;
+      state.video.performer = payload.performer;
     	localStorage.setItem('video', JSON.stringify(state.video));
     },
     // Array mutation methods: https://vuejs.org/v2/guide/list.html#Array-Change-Detection
