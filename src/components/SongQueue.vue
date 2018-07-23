@@ -1,7 +1,7 @@
 <template>
   <section class="songQueue">
     <h2 class="songQueue-heading">Song Queue</h2>
-    <ol class="songQueue-list">
+    <ol class="songQueue-list" id="sortable">
       <li class="songQueue-listItem" v-for="(song, index) in queue">
         {{ song.title }}
         <br>
@@ -61,6 +61,8 @@ export default {
       var index = parseInt(e.target.dataset.index, 10);
       this.$store.commit('moveSongInQueue', {from: index, to: index - 1});
     }
+  },
+  mounted () {
   }
 }
 </script>
@@ -75,6 +77,10 @@ export default {
 
 .songQueue-list {
   padding: 0 0 0 20px;
+}
+
+.songQueue-listItem {
+  cursor: move;
 }
 
 </style>

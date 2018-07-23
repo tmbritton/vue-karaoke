@@ -2,7 +2,7 @@
   "name": "vue-karaoke",
   "version": "0.0.1",
   "description": "A web-based karaoke application.",
-  "author": "Tom Britton <tom.britton@wholefoods.com>",
+  "author": "Tom Britton <britton.tm@gmail.com>",
   "private": true,
   "scripts": {
     "watchify": "watchify -vd -p browserify-hmr -e src/main.js -o dist/build.js",
@@ -29,7 +29,8 @@
     "fetch-ie8": "^1.4.3",
     "vue": "^2.0.1",
     "vue-youtube-embed": "^2.0.1",
-    "vuex": "^2.1.1"
+    "vuex": "^2.1.1",
+    "firebase": "~3.6.10"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",

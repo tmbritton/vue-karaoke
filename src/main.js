@@ -6,6 +6,17 @@ import Vuex from 'vuex'
 import App from './App.vue'
 import HeaderApp from './Header.vue'
 import VueYouTubeEmbed from 'vue-youtube-embed'
+import * as firebase from 'firebase';
+
+const fbApp = firebase.initializeApp(
+  { 
+    apiKey: "AIzaSyDcHYJWIwghrijDy-a1iWGC41Q9PKq45Tc",
+    authDomain: "fancy-karaoke.firebaseapp.com",
+    databaseURL: "https://fancy-karaoke.firebaseio.com",
+    storageBucket: "fancy-karaoke.appspot.com",
+    messagingSenderId: "535283283880" 
+  }
+);
 
 Vue.use(Vuex);
 Vue.use(VueYouTubeEmbed);
@@ -59,7 +70,7 @@ const store = new Vuex.Store({
   }
 });
 
-new Vue({ // eslint-disable-line no-new
+window.karaokeApp = new Vue({ // eslint-disable-line no-new
   el: '#app',
   store,
   render: (h) => h(App)
