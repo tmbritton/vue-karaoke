@@ -24,7 +24,7 @@ export default {
   methods: {
     searchForVideos: function(submitEvent) {
       var append = encodeURIComponent(" karaoke");
-      var url = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=relevance&type=video&videoEmbeddable=true&key=AIzaSyBkvR8k4rZ03LwzPcjReLqloNWrgNv9TIE&videoSyndicated=true&q=" + encodeURIComponent(this.searchTerm) + append;
+      var url = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=relevance&type=video&videoEmbeddable=true&key=AIzaSyCfE_YVv1XZmKNr9xfbnXs5o8TtnIyoq7Q&videoSyndicated=true&q=" + encodeURIComponent(this.searchTerm) + append;
 
       //this.searchResults = [];
       this.$store.commit('clearSearchResults');
